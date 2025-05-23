@@ -1,0 +1,237 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.9);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color:#aaa;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+  color:white;
+  transform: scale(1.5);
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px white
+}
+
+/* Header */
+header {
+  background: url('smartphones.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  animation: fadeIn 2s ease;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about, .culture, .facts, .habitat, .contact {
+  background-color: #1a1a1a;
+}
+
+.cta {
+  background-color: #222;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.cta .btn {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta .btn:hover {
+  background-color: #444;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 280px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  z-index: 1;
+}
+
+.card h3, .card p {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  margin: 0;
+  padding: 8px;
+}
+
+.card h3 {
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons inside cards */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-buttons .btn {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #ffffffbb;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-buttons .btn:hover {
+  background-color: #050303;
+  color: #fff;
+}
+
+/* Backgrounds for cards */
+.iphone       { background-image: url('iphone15.jpg'); }
+.samsung      { background-image: url('samsungs24u.jpg'); }
+.pixel        { background-image: url('google8.jpg'); }
+.redmi-note13 { background-image: url('redminote.jpg'); }
+.realme-gt5   { background-image: url('realmegt5.jpg'); }
+.vivo-x100    { background-image: url('vivox100.jpg'); }
+.oppo-findx7  { background-image: url('oppox.jpg'); }
+
+/* Facts list */
+.facts ul {
+  list-style: disc;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.facts ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
